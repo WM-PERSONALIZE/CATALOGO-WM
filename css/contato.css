@@ -1,0 +1,721 @@
+/* =========================================================
+   PÁGINA CONTATO
+   WM PERSONALIZE
+   ========================================================= */
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.contato-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 44px 0;
+    background: var(--cor-fundo);
+}
+
+/* =========================================================
+   FUNDO DO HERO — MESMO PADRÃO DO CATÁLOGO, COM FADE REAL
+   ========================================================= */
+
+/* Estrutura das duas camadas */
+.contato-hero::before,
+.contato-hero::after {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    content: "";
+    pointer-events: none;
+}
+
+/* Imagem desfocada no fundo.
+   Somente a imagem recebe a máscara, para desaparecer
+   suavemente antes de chegar ao final do hero. */
+.contato-hero::before {
+    inset: -22px;
+    background: url("../img/home/fundo-catalogo.png") center 52% / cover no-repeat;
+    filter: blur(11px);
+    opacity: 0.62;
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        #000 0%,
+        #000 48%,
+        rgba(0,0,0,0.55) 72%,
+        rgba(0,0,0,0) 100%
+    );
+
+    mask-image: linear-gradient(
+        to bottom,
+        #000 0%,
+        #000 48%,
+        rgba(0,0,0,0.55) 72%,
+        rgba(0,0,0,0) 100%
+    );
+}
+
+/* Camada clara permanece inteira, garantindo a leitura
+   do texto e fazendo a imagem sumir visualmente no final. */
+.contato-hero::after {
+    background: linear-gradient(
+        180deg,
+        rgba(248, 249, 250, 0.62) 0%,
+        rgba(248, 249, 250, 0.70) 48%,
+        rgba(248, 249, 250, 0.88) 78%,
+        rgba(248, 249, 250, 1) 100%
+    );
+}
+
+.contato-hero-conteudo {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contato-hero h1 {
+    margin: 0 0 18px;
+
+    font-size: clamp(36px, 5vw, 54px);
+    line-height: 1.1;
+    font-weight: 800;
+
+    color: var(--cor-texto);
+}
+
+.contato-hero h1 span {
+    color: var(--cor-primaria);
+}
+
+.contato-hero p {
+    max-width: 650px;
+    margin: 0 auto;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: var(--cor-texto-secundario);
+}
+
+
+/* =========================================================
+   ÁREA PRINCIPAL DE CONTATO
+   ========================================================= */
+
+.contato-principal {
+    position: relative;
+    z-index: 1;
+    padding: 80px 0;
+    background: var(--cor-branco);
+}
+
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: stretch;
+    gap: 55px;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+   ========================================================= */
+
+.contato-informacoes {
+    max-width: 650px;
+}
+
+.contato-informacoes h2 {
+    margin: 0 0 12px;
+
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.15;
+
+    color: var(--cor-texto);
+}
+
+.contato-introducao {
+    margin: 0 0 30px;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: var(--cor-texto-secundario);
+}
+
+
+/* =========================================================
+   CARDS DE CONTATO
+   ========================================================= */
+
+.contato-card {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 20px;
+
+    background: var(--cor-branco);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-medio);
+
+    color: inherit;
+    text-decoration: none;
+
+    box-shadow: var(--sombra-pequena);
+
+    transition:
+        transform var(--transicao),
+        box-shadow var(--transicao),
+        border-color var(--transicao);
+}
+
+a.contato-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(215, 25, 32, 0.25);
+    box-shadow: var(--sombra-media);
+}
+
+.contato-card-icone {
+    flex-shrink: 0;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--cor-primaria-clara);
+
+    font-size: 23px;
+}
+
+.contato-card-conteudo {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.contato-card-conteudo strong {
+    margin-bottom: 3px;
+
+    font-size: 17px;
+    color: var(--cor-texto);
+}
+
+.contato-card-conteudo > span {
+    font-size: 15px;
+    color: var(--cor-texto);
+}
+
+.contato-card-conteudo small {
+    margin-top: 4px;
+
+    font-size: 13px;
+    line-height: 1.4;
+
+    color: var(--cor-texto-secundario);
+}
+
+.contato-card-seta {
+    margin-left: auto;
+
+    font-size: 24px;
+    font-weight: 600;
+
+    color: var(--cor-primaria);
+
+    transition: transform var(--transicao);
+}
+
+a.contato-card:hover .contato-card-seta {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   DESTAQUE WHATSAPP
+   ========================================================= */
+
+.contato-destaque {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 45px;
+
+    background: var(--cor-primaria-clara);
+    border: 1px solid rgba(215, 25, 32, 0.15);
+    border-radius: var(--raio-grande);
+
+    box-shadow: var(--sombra-pequena);
+}
+
+.contato-destaque-icone {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border-radius: 50%;
+
+    background: var(--cor-branco);
+
+    font-size: 30px;
+
+    box-shadow: var(--sombra-pequena);
+}
+
+.contato-destaque .titulo-pequeno {
+    margin-bottom: 8px;
+}
+
+.contato-destaque h2 {
+    margin: 0 0 15px;
+
+    font-size: 34px;
+    line-height: 1.2;
+
+    color: var(--cor-texto);
+}
+
+.contato-destaque p {
+    margin: 0 0 25px;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    color: var(--cor-texto-secundario);
+}
+
+.contato-destaque .botao {
+    width: 100%;
+}
+
+.contato-destaque-observacao {
+    display: block;
+
+    width: 100%;
+    margin-top: 14px;
+
+    text-align: center;
+
+    font-size: 13px;
+    color: var(--cor-texto-secundario);
+}
+
+
+/* =========================================================
+   MAPA
+   ========================================================= */
+
+.contato-mapa {
+    padding: 80px 0;
+    background: var(--cor-fundo);
+}
+
+.contato-mapa .titulo-secao {
+    margin-bottom: 40px;
+}
+
+.mapa-container {
+    width: 100%;
+    overflow: hidden;
+
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-grande);
+
+    background: var(--cor-branco);
+    box-shadow: var(--sombra-media);
+}
+
+.mapa-container iframe {
+    display: block;
+
+    width: 100%;
+    min-height: 450px;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   CTA FINAL
+   ========================================================= */
+
+.contato-cta {
+    padding: 65px 0;
+
+    background: var(--cor-branco);
+}
+
+.contato-cta-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    padding: 40px 45px;
+
+    border-radius: var(--raio-grande);
+
+    background: var(--cor-fundo);
+    border: 1px solid var(--cor-borda);
+
+    box-shadow: var(--sombra-pequena);
+}
+
+.contato-cta-conteudo .titulo-pequeno {
+    margin-bottom: 8px;
+}
+
+.contato-cta-conteudo h2 {
+    max-width: 600px;
+
+    margin: 0 0 10px;
+
+    font-size: clamp(27px, 4vw, 38px);
+    line-height: 1.15;
+
+    color: var(--cor-texto);
+}
+
+.contato-cta-conteudo p {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    color: var(--cor-texto-secundario);
+}
+
+.contato-cta-botoes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.contato-cta-botoes .botao {
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — ATÉ 1100PX
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .contato-grid {
+        gap: 35px;
+    }
+
+    .contato-destaque {
+        padding: 35px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — ATÉ 800PX
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .contato-hero {
+        padding: 38px 0;
+    }
+
+    .contato-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .contato-informacoes {
+        max-width: none;
+    }
+
+    .contato-destaque {
+        padding: 35px;
+    }
+
+    .contato-mapa {
+        padding: 60px 0;
+    }
+
+    .mapa-container iframe {
+        min-height: 400px;
+    }
+
+    .contato-cta-conteudo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — ATÉ 550PX
+   ========================================================= */
+
+@media (max-width: 550px) {
+
+    .contato-hero {
+        padding: 32px 0;
+    }
+
+    .contato-hero::before {
+        inset: -14px;
+        filter: blur(7px);
+        opacity: 0.48;
+    }
+
+    .contato-hero::after {
+        background: linear-gradient(
+            180deg,
+            rgba(248, 249, 250, 0.68) 0%,
+            rgba(248, 249, 250, 0.76) 50%,
+            rgba(248, 249, 250, 0.94) 82%,
+            rgba(248, 249, 250, 1) 100%
+        );
+    }
+
+    .contato-hero-conteudo {
+        padding: 0 15px;
+    }
+
+    .contato-hero h1 {
+        font-size: 34px;
+    }
+
+    .contato-hero p {
+        font-size: 15px;
+    }
+
+
+    .contato-principal {
+        padding: 55px 0;
+    }
+
+    .contato-grid {
+        padding: 0 15px;
+    }
+
+    .contato-informacoes h2 {
+        font-size: 30px;
+    }
+
+    .contato-card {
+        padding: 17px;
+        gap: 12px;
+    }
+
+    .contato-card-icone {
+        width: 46px;
+        height: 46px;
+        font-size: 21px;
+    }
+
+    .contato-card-conteudo strong {
+        font-size: 16px;
+    }
+
+    .contato-card-conteudo > span {
+        font-size: 14px;
+    }
+
+    .contato-card-conteudo small {
+        font-size: 12px;
+    }
+
+    .contato-card-seta {
+        font-size: 20px;
+    }
+
+
+    .contato-destaque {
+        padding: 28px 22px;
+        border-radius: var(--raio-medio);
+    }
+
+    .contato-destaque h2 {
+        font-size: 29px;
+    }
+
+
+    .contato-mapa {
+        padding: 55px 0;
+    }
+
+    .contato-mapa .container {
+        padding: 0 15px;
+    }
+
+    .mapa-container {
+        border-radius: var(--raio-medio);
+    }
+
+    .mapa-container iframe {
+        min-height: 350px;
+    }
+
+
+    .contato-cta {
+        padding: 45px 0;
+    }
+
+    .contato-cta-conteudo {
+        margin: 0 15px;
+        padding: 28px 22px;
+        border-radius: var(--raio-medio);
+    }
+
+    .contato-cta-botoes {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .contato-cta-botoes .botao {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — TELAS MUITO PEQUENAS
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .contato-hero h1 {
+        font-size: 30px;
+    }
+
+    .contato-card {
+        align-items: flex-start;
+    }
+
+    .contato-card-seta {
+        display: none;
+    }
+
+    .contato-destaque-icone {
+        width: 58px;
+        height: 58px;
+    }
+
+    .mapa-container iframe {
+        min-height: 300px;
+    }
+
+}
+
+
+/* =========================================================
+   LOGO NO CARD DE ATENDIMENTO
+   ========================================================= */
+
+.contato-destaque-logo {
+    width: 100%;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Sobe a logo visualmente dentro do quadro */
+    position: relative;
+    top: -12px;
+}
+
+.contato-destaque-logo img {
+    width: auto;
+    max-width: 245px;
+    max-height: 95px;
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   LOGO NO BLOCO FINAL
+   ========================================================= */
+
+.contato-cta-marca {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-right: 30px;
+    margin-right: 6px;
+
+    border-right: 1px solid var(--cor-borda);
+}
+
+.contato-cta-marca img {
+    width: auto;
+    max-width: 180px;
+    max-height: 90px;
+    object-fit: contain;
+}
+
+@media (max-width: 1100px) {
+
+    .contato-cta-marca {
+        padding-right: 0;
+        margin-right: 0;
+        margin-bottom: 6px;
+
+        border-right: 0;
+        justify-content: flex-start;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .contato-cta-marca img {
+        max-width: 150px;
+    }
+
+    .contato-destaque-logo img {
+        max-width: 200px;
+        max-height: 85px;
+    }
+
+}
+
+
+/* Texto + botões do bloco final, empilhados ao lado da logo. */
+.contato-cta-info {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.contato-cta-info .contato-cta-botoes {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}

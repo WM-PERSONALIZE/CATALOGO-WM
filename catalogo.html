@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Catálogo WM Personalize - Papelaria, artigos de festa, doces, brinquedos, utilidades e muito mais.">
+
+    <title>Catálogo | WM Personalize</title>
+
+    <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
+
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- CSS DO CATÁLOGO -->
+    <link rel="stylesheet" href="css/catalogo.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header class="cabecalho">
+
+        <div class="container cabecalho-conteudo">
+
+            <a href="index.html" class="logo">
+                <img src="img/logo/logo.png" alt="WM Personalize">
+            </a>
+
+            <button
+                type="button"
+                class="botao-menu-mobile"
+                id="botaoMenuMobile"
+                aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <nav class="menu-principal">
+
+                <a href="index.html">
+                    Início
+                </a>
+
+                <a href="catalogo.html" class="ativo">
+                    Catálogo
+                </a>
+
+                <a href="grafica.html">
+                    Gráfica
+                </a>
+
+                <a href="sobre.html">
+                    Sobre a loja
+                </a>
+
+                <a href="contato.html">
+                    Contato
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+    ====================================================== -->
+
+    <main>
+
+        <!-- =================================================
+             TOPO DO CATÁLOGO
+        ================================================== -->
+
+        <section class="catalogo-topo">
+
+            <div class="container">
+
+                <div class="catalogo-titulo">
+
+                    <span class="titulo-pequeno">
+                        WM Personalize
+                    </span>
+
+                    <h1>
+                        Nosso catálogo
+                    </h1>
+
+                    <p>
+                        Encontre produtos de papelaria, artigos de festa,
+                        doces, brinquedos, utilidades e muito mais.
+                    </p>
+
+                </div>
+
+
+                <!-- =========================================
+                     BUSCA
+                ========================================== -->
+
+                <div class="busca-catalogo">
+
+                    <form
+                        class="barra-pesquisa"
+                        id="formBuscaCatalogo"
+                        role="search">
+
+                        <input
+                            type="search"
+                            id="buscaCatalogo"
+                            name="busca"
+                            placeholder="O que você está procurando?"
+                            autocomplete="off"
+                            aria-label="Pesquisar produtos">
+
+                        <button
+                            type="submit"
+                            aria-label="Pesquisar">
+
+                            <span class="icone-marca" data-icone="busca"></span>
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CATEGORIAS
+        ================================================== -->
+
+        <section class="categorias-catalogo">
+
+            <div class="container">
+
+                <div class="categorias-scroll">
+
+                    <button
+                        type="button"
+                        class="categoria-filtro ativo"
+                        data-categoria="todos">
+
+                        Todos
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="categoria-filtro"
+                        data-categoria="papelaria">
+
+                        Papelaria
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="categoria-filtro"
+                        data-categoria="festa">
+
+                        Artigos de festa
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="categoria-filtro"
+                        data-categoria="doces">
+
+                        Doces
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="categoria-filtro"
+                        data-categoria="brinquedos">
+
+                        Brinquedos
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="categoria-filtro"
+                        data-categoria="utilidades">
+
+                        Utilidades
+
+                    </button>
+
+                    <a
+                        href="grafica.html"
+                        class="categoria-filtro categoria-grafica">
+
+                        Gráfica
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CATÁLOGO
+        ================================================== -->
+
+        <section class="secao-catalogo">
+
+            <div class="container">
+
+
+                <!-- =========================================
+                     BARRA DE FILTROS
+                ========================================== -->
+
+                <div class="barra-filtros">
+
+
+                    <!-- QUANTIDADE -->
+
+                    <div class="resultado-catalogo">
+
+                        <strong id="quantidadeResultados">
+                            Produtos encontrados
+                        </strong>
+
+                    </div>
+
+
+                    <!-- FILTRO DE PREÇO -->
+
+                    <div class="filtro-preco">
+
+                        <label for="filtroPreco">
+                            Faixa de preço:
+                            <strong id="valorPreco">
+                                R$ 0,00
+                            </strong>
+                        </label>
+
+                        <input
+                            type="range"
+                            id="filtroPreco"
+                            min="0"
+                            max="1000"
+                            value="1000"
+                            step="1">
+
+                    </div>
+
+
+                    <!-- ORDENAÇÃO -->
+
+                    <div class="filtro-ordenacao">
+
+                        <label for="ordenacaoProdutos">
+                            Ordenar:
+                        </label>
+
+                        <select id="ordenacaoProdutos">
+
+                            <option value="relevantes">
+                                Mais relevantes
+                            </option>
+
+                            <option value="procurados">
+                                Mais procurados
+                            </option>
+
+                            <option value="recentes">
+                                Mais recentes
+                            </option>
+
+                            <option value="menor-preco">
+                                Menor preço
+                            </option>
+
+                            <option value="maior-preco">
+                                Maior preço
+                            </option>
+
+                            <option value="az">
+                                A → Z
+                            </option>
+
+                            <option value="za">
+                                Z → A
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     PRODUTOS
+                ========================================== -->
+
+                <div
+                    class="produtos-grid"
+                    id="produtosCatalogo">
+
+                    <!-- Os produtos serão carregados pelo JavaScript -->
+
+                </div>
+
+
+                <!-- =========================================
+                     SEM RESULTADOS
+                ========================================== -->
+
+                <div
+                    class="mensagem-sem-resultados oculto"
+                    id="mensagemSemResultados">
+
+                    <div class="icone-sem-resultados">
+                        <span class="icone-marca" data-icone="busca"></span>
+                    </div>
+
+                    <h2>
+                        Nenhum produto encontrado
+                    </h2>
+
+                    <p>
+                        Não encontramos produtos para os filtros
+                        selecionados.
+                    </p>
+
+                    <p>
+                        Tente pesquisar outro termo ou escolher
+                        uma categoria diferente.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         MODAL DO PRODUTO
+    ====================================================== -->
+
+    <div
+        class="modal-produto"
+        id="modalProduto"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalProdutoNome">
+
+        <div class="modal-conteudo">
+
+
+            <!-- FECHAR -->
+
+            <button
+                type="button"
+                class="modal-fechar"
+                aria-label="Fechar">
+
+                ×
+
+            </button>
+
+
+            <!-- IMAGEM -->
+
+            <div class="modal-imagem-container">
+
+                <img
+                    id="modalProdutoImagem"
+                    src=""
+                    alt="">
+
+            </div>
+
+
+            <!-- INFORMAÇÕES -->
+
+            <div class="modal-informacoes">
+
+                <span
+                    class="modal-produto-categoria"
+                    id="modalProdutoCategoria">
+                </span>
+
+                <h2 id="modalProdutoNome">
+                    Produto
+                </h2>
+
+                <p
+                    class="modal-produto-descricao"
+                    id="modalProdutoDescricao">
+                </p>
+
+                <div
+                    class="modal-produto-preco"
+                    id="modalProdutoPreco">
+                </div>
+
+
+                <!-- WHATSAPP -->
+
+                <a
+                    href="#"
+                    class="botao botao-whatsapp modal-whatsapp"
+                    id="modalProdutoWhatsApp"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <span class="icone-marca" data-icone="whatsapp"></span>
+
+                    Tenho interesse
+
+                </a>
+
+                <p class="modal-aviso">
+
+                    A disponibilidade e o valor final serão
+                    confirmados pelo atendimento.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         RODAPÉ
+    ====================================================== -->
+
+    <footer class="rodape">
+
+        <div class="container rodape-conteudo">
+
+
+            <!-- INFORMAÇÕES -->
+
+            <div class="rodape-coluna">
+
+                <img
+                    src="img/logo/logo.png"
+                    alt="WM Personalize"
+                    class="rodape-logo">
+
+                <p>
+                    Tudo o que você precisa,
+                    em um só lugar.
+                </p>
+
+            </div>
+
+
+            <!-- NAVEGAÇÃO -->
+
+            <div class="rodape-coluna">
+
+                <h3>
+                    Navegação
+                </h3>
+
+                <a href="index.html">
+                    Início
+                </a>
+
+                <a href="catalogo.html">
+                    Catálogo
+                </a>
+
+                <a href="grafica.html">
+                    Gráfica
+                </a>
+
+                <a href="sobre.html">
+                    Sobre a loja
+                </a>
+
+                <a href="contato.html">
+                    Contato
+                </a>
+
+            </div>
+
+
+            <!-- CONTATO -->
+
+            <div class="rodape-coluna">
+
+                <h3>
+                    Fale conosco
+                </h3>
+
+                <a
+                    href="https://wa.me/556298812925"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link-com-icone">
+
+                    <span class="icone-marca icone-cor-whatsapp" data-icone="whatsapp"></span>
+                    WhatsApp
+
+                </a>
+
+                <a
+                    href="https://www.instagram.com/wmpersonalize/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link-com-icone">
+
+                    <span class="icone-marca icone-cor-instagram" data-icone="instagram"></span>
+                    Instagram
+
+                </a>
+
+                <span>
+                    Guarani de Goiás - GO
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="rodape-final">
+
+            <div class="container">
+
+                <p>
+                    © 2026 WM Personalize. Todos os direitos reservados.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         WHATSAPP FLUTUANTE
+    ====================================================== -->
+
+    <a
+        href="https://wa.me/556298812925"
+        class="whatsapp-flutuante"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Falar pelo WhatsApp">
+
+        <span class="icone-marca" data-icone="whatsapp"></span>
+
+    </a>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/icones.js"></script>
+
+    <script src="js/script.js"></script>
+
+    <script src="js/produtos.js"></script>
+
+    <script src="js/catalogo.js"></script>
+
+</body>
+
+</html>

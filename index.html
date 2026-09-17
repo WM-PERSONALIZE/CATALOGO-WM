@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="WM Personalize - Tudo o que você precisa, em um só lugar. Papelaria, artigos de festa, doces, brinquedos, utilidades e serviços gráficos em Guarani de Goiás - GO.">
+
+    <meta name="keywords"
+        content="WM Personalize, papelaria, artigos de festa, doces, brinquedos, utilidades, gráfica, Guarani de Goiás">
+
+    <meta name="author" content="WM Personalize">
+
+    <title>WM Personalize | Tudo o que você precisa, em um só lugar.</title>
+
+    <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
+
+    <!-- CSS GLOBAL -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- CSS ESPECÍFICO DA HOME -->
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+    <header class="header">
+
+        <div class="container header-conteudo">
+
+            <!-- LOGO -->
+            <a href="index.html" class="logo" aria-label="WM Personalize - Início">
+                <img src="img/logo/logo.png" alt="WM Personalize">
+            </a>
+
+            <!-- MENU PRINCIPAL -->
+            <nav class="menu-principal" aria-label="Menu principal">
+
+                <a href="index.html" class="ativo">
+                    Início
+                </a>
+
+                <a href="catalogo.html">
+                    Catálogo
+                </a>
+
+                <a href="grafica.html">
+                    Gráfica
+                </a>
+
+                <a href="sobre.html">
+                    Sobre a loja
+                </a>
+
+                <a href="contato.html">
+                    Contato
+                </a>
+
+            </nav>
+
+            <!-- BOTÃO MENU MOBILE -->
+            <button
+                class="botao-menu-mobile"
+                id="botaoMenuMobile"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =================================================
+             BUSCA
+        ================================================== -->
+        <section class="barra-pesquisa-secao">
+
+            <div class="container">
+
+                <form
+                    class="barra-pesquisa"
+                    id="formBuscaHome"
+                    role="search">
+
+                    <input
+                        type="search"
+                        id="buscaHome"
+                        name="busca"
+                        placeholder="O que você está procurando?"
+                        autocomplete="off"
+                        aria-label="Pesquisar produtos">
+
+                    <button
+                        type="submit"
+                        aria-label="Pesquisar">
+
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+
+                            <circle
+                                cx="11"
+                                cy="11"
+                                r="7"
+                                stroke="currentColor"
+                                stroke-width="2"/>
+
+                            <path
+                                d="M20 20L16 16"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"/>
+
+                        </svg>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CATEGORIAS
+        ================================================== -->
+        <section class="categorias-secao">
+
+            <div class="container">
+
+                <div class="categorias-barra">
+
+                    <div class="categorias-lista">
+
+                        <a
+                            href="catalogo.html?categoria=papelaria"
+                            class="categoria-item">
+
+                            Papelaria
+
+                        </a>
+
+                        <a
+                            href="catalogo.html?categoria=festa"
+                            class="categoria-item">
+
+                            Artigos de festa
+
+                        </a>
+
+                        <a
+                            href="catalogo.html?categoria=doces"
+                            class="categoria-item">
+
+                            Doces
+
+                        </a>
+
+                        <a
+                            href="catalogo.html?categoria=brinquedos"
+                            class="categoria-item">
+
+                            Brinquedos
+
+                        </a>
+
+                        <a
+                            href="catalogo.html?categoria=utilidades"
+                            class="categoria-item">
+
+                            Utilidades
+
+                        </a>
+
+                        <a
+                            href="grafica.html"
+                            class="categoria-item">
+
+                            Gráfica
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="inicio-destaque">
+
+            <!-- =================================================
+                 BANNER PRINCIPAL
+            ================================================== -->
+            <section class="hero">
+
+            <div class="container">
+
+                <div class="hero-banner">
+
+                    <picture>
+
+                        <img
+                            src="img/home/banner-01.png"
+                            alt="WM Personalize - Tudo o que você precisa, em um só lugar."
+                            class="hero-banner-imagem"
+                            id="bannerPrincipal">
+
+                    </picture>
+
+                    <!-- CONTROLES DO BANNER -->
+
+                    <button
+                        class="hero-controle hero-anterior"
+                        id="bannerAnterior"
+                        type="button"
+                        aria-label="Banner anterior">
+
+                        &#10094;
+
+                    </button>
+
+                    <button
+                        class="hero-controle hero-proximo"
+                        id="bannerProximo"
+                        type="button"
+                        aria-label="Próximo banner">
+
+                        &#10095;
+
+                    </button>
+
+                    <!-- INDICADORES -->
+
+                    <div
+                        class="hero-indicadores"
+                        id="bannerIndicadores"
+                        aria-label="Indicadores do banner">
+
+                        <button
+                            type="button"
+                            class="indicador ativo"
+                            data-slide="0"
+                            aria-label="Ir para o banner 1">
+                        </button>
+
+                        <button
+                            type="button"
+                            class="indicador"
+                            data-slide="1"
+                            aria-label="Ir para o banner 2">
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 APRESENTAÇÃO
+            ================================================== -->
+            <section class="secao apresentacao">
+
+            <div class="container">
+
+                <div class="apresentacao-conteudo">
+
+                    <span class="selo-secao">
+                        WM PERSONALIZE
+                    </span>
+
+                    <h1>
+                        Tudo o que você precisa,
+                        <span>em um só lugar.</span>
+                    </h1>
+
+                    <p>
+                        Encontre produtos para o dia a dia, papelaria,
+                        artigos de festa, doces, brinquedos, utilidades
+                        e muito mais.
+                    </p>
+
+                    <a
+                        href="catalogo.html"
+                        class="botao botao-primario">
+
+                        Ver catálogo
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =================================================
+             CATEGORIAS EM DESTAQUE
+        ================================================== -->
+        <section class="secao secao-cinza categorias-destaque">
+
+            <div class="container">
+
+                <div class="titulo-secao">
+
+                    <div>
+                        <span>ENCONTRE O QUE PROCURA</span>
+
+                        <h2>
+                            Nossas categorias
+                        </h2>
+                    </div>
+
+                    <a
+                        href="catalogo.html"
+                        class="link-secao">
+
+                        Ver catálogo completo →
+
+                    </a>
+
+                </div>
+
+
+                <div class="categorias-grid">
+
+                    <!-- PAPELARIA -->
+                    <a
+                        href="catalogo.html?categoria=papelaria"
+                        class="categoria-card">
+
+                        <div class="categoria-card-icone">
+                            ✏️
+                        </div>
+
+                        <div>
+                            <h3>Papelaria</h3>
+
+                            <p>
+                                Materiais para estudo,
+                                trabalho e organização.
+                            </p>
+                        </div>
+
+                    </a>
+
+
+                    <!-- FESTA -->
+                    <a
+                        href="catalogo.html?categoria=festa"
+                        class="categoria-card">
+
+                        <div class="categoria-card-icone">
+                            🎉
+                        </div>
+
+                        <div>
+                            <h3>Artigos de festa</h3>
+
+                            <p>
+                                Itens para deixar
+                                sua comemoração especial.
+                            </p>
+                        </div>
+
+                    </a>
+
+
+                    <!-- DOCES -->
+                    <a
+                        href="catalogo.html?categoria=doces"
+                        class="categoria-card">
+
+                        <div class="categoria-card-icone">
+                            🍬
+                        </div>
+
+                        <div>
+                            <h3>Doces</h3>
+
+                            <p>
+                                Opções deliciosas
+                                para todos os momentos.
+                            </p>
+                        </div>
+
+                    </a>
+
+
+                    <!-- BRINQUEDOS -->
+                    <a
+                        href="catalogo.html?categoria=brinquedos"
+                        class="categoria-card">
+
+                        <div class="categoria-card-icone">
+                            🧸
+                        </div>
+
+                        <div>
+                            <h3>Brinquedos</h3>
+
+                            <p>
+                                Diversão para crianças
+                                de diferentes idades.
+                            </p>
+                        </div>
+
+                    </a>
+
+
+                    <!-- UTILIDADES -->
+                    <a
+                        href="catalogo.html?categoria=utilidades"
+                        class="categoria-card">
+
+                        <div class="categoria-card-icone">
+                            🏠
+                        </div>
+
+                        <div>
+                            <h3>Utilidades</h3>
+
+                            <p>
+                                Produtos úteis para
+                                sua casa e seu dia a dia.
+                            </p>
+                        </div>
+
+                    </a>
+
+
+                    <!-- GRÁFICA -->
+                    <a
+                        href="grafica.html"
+                        class="categoria-card">
+
+                        <div class="categoria-card-icone">
+                            🖨️
+                        </div>
+
+                        <div>
+                            <h3>Gráfica</h3>
+
+                            <p>
+                                Impressões, cópias,
+                                encadernações e muito mais.
+                            </p>
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PRODUTOS EM DESTAQUE
+             -------------------------------------------------
+             Os cards sao montados sozinhos a partir de
+             js/produtos.js: todo produto com "destaque: true"
+             aparece aqui. A lista rola para o lado.
+        ================================================== -->
+        <section class="secao produtos-home">
+
+            <div class="container">
+
+                <div class="titulo-secao">
+
+                    <div>
+                        <span>SELECIONADOS PARA VOCÊ</span>
+
+                        <h2>
+                            Produtos em destaque
+                        </h2>
+                    </div>
+
+                    <a
+                        href="catalogo.html"
+                        class="link-secao">
+
+                        Ver todos →
+
+                    </a>
+
+                </div>
+
+
+                <div
+                    class="carrossel-produtos"
+                    id="produtosDestaque">
+
+                    <!-- Preenchido por js/home-destaques.js -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             GRÁFICA
+        ================================================== -->
+        <section class="secao grafica-home">
+
+            <div class="container">
+
+                <div class="grafica-home-conteudo">
+
+                    <div class="grafica-home-texto">
+
+                        <span class="selo-secao">
+                            SERVIÇOS GRÁFICOS
+                        </span>
+
+                        <h2>
+                            Precisou imprimir?
+                            <br>
+                            <span>A WM Personalize resolve.</span>
+                        </h2>
+
+                        <p>
+                            Conte com nossos serviços gráficos para
+                            impressões, cópias, encadernações,
+                            plastificações e outros materiais.
+                        </p>
+
+                        <a
+                            href="grafica.html"
+                            class="botao botao-primario">
+
+                            Conhecer serviços
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="grafica-home-imagem">
+
+                        <img
+                            src="img/grafica/impressao.png"
+                            alt="Serviços de impressão da WM Personalize"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                        <div
+                            class="placeholder-imagem"
+                            style="display: none;">
+
+                            Serviços gráficos
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SOBRE A LOJA
+        ================================================== -->
+        <section class="secao secao-cinza sobre-home">
+
+            <div class="container">
+
+                <div class="sobre-home-conteudo">
+
+                    <div class="sobre-home-imagens">
+
+                        <!-- ===========================================
+                             FOTOS DA LOJA
+
+                             Para colocar mais uma foto, copie e cole
+                             uma das linhas <img> abaixo e troque
+                             apenas o caminho em src="...".
+                        ============================================ -->
+
+                        <div class="sobre-home-galeria">
+
+                            <img src="img/loja/fachada.png" alt="Fachada da WM Personalize" loading="lazy">
+
+
+                        </div>
+
+                        
+                        
+
+                    </div>
+
+
+                    <div class="sobre-home-texto">
+
+                        <span class="selo-secao">
+                            SOBRE A WM PERSONALIZE
+                        </span>
+
+                        <h2>
+                            Tudo mais fácil,
+                            <span>perto de você.</span>
+                        </h2>
+
+                        <p>
+                            A WM Personalize reúne em um só lugar
+                            produtos para papelaria, festas, doces,
+                            brinquedos, utilidades e serviços gráficos.
+                        </p>
+
+                        <p>
+                            Estamos em Guarani de Goiás - GO,
+                            prontos para atender você de forma
+                            prática e personalizada.
+                        </p>
+
+                        <a
+                            href="sobre.html"
+                            class="botao botao-secundario">
+
+                            Conheça a loja
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LOCALIZAÇÃO E HORÁRIO
+        ================================================== -->
+        <section class="secao localizacao-home">
+
+            <div class="container">
+
+                <div class="titulo-secao titulo-centralizado">
+
+                    <div>
+
+                        <span>
+                            VENHA NOS VISITAR
+                        </span>
+
+                        <h2>
+                            Onde estamos
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="informacoes-loja-grid">
+
+                    <!-- ENDEREÇO -->
+                    <div class="informacao-loja-card">
+
+                        <div class="informacao-icone">
+                            📍
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Endereço
+                            </h3>
+
+                            <p>
+                                Rua Urias José Dourado
+                                <br>
+                                Centro · Guarani de Goiás - GO
+                                <br>
+                                CEP 73910-000
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- HORÁRIO -->
+                    <div class="informacao-loja-card">
+
+                        <div class="informacao-icone">
+                            🕐
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Horário de atendimento
+                            </h3>
+
+                            <p>
+                                Segunda a sexta:
+                                <br>
+                                08:00–12:00 | 14:00–18:00
+                            </p>
+
+                            <p>
+                                Sábado: 08:00–12:00
+                                <br>
+                                Domingo: fechado
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- WHATSAPP -->
+                    <div class="informacao-loja-card">
+
+                        <div class="informacao-icone icone-redondo-whatsapp">
+                            <span class="icone-marca" data-icone="whatsapp"></span>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Fale conosco
+                            </h3>
+
+                            <p>
+                                Tire suas dúvidas,
+                                consulte produtos e
+                                solicite informações.
+                            </p>
+
+                            <a
+                                href="https://wa.me/556298812925"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="link-whatsapp link-com-icone">
+
+                                <span class="icone-marca" data-icone="whatsapp"></span>
+                                Chamar no WhatsApp →
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MAPA
+        ================================================== -->
+        <section class="mapa-home">
+
+            <div class="mapa-container">
+
+                <iframe
+                    src="https://www.google.com/maps?q=-13.9378415,-46.4811684&amp;z=18&amp;output=embed"
+                    width="100%"
+                    height="400"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Localização da WM Personalize">
+                </iframe>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CHAMADA PARA WHATSAPP
+        ================================================== -->
+        <section class="secao chamada-whatsapp">
+
+            <div class="container">
+
+                <div class="chamada-whatsapp-conteudo">
+
+                    <div>
+
+                        <span>
+                            PRECISA DE AJUDA?
+                        </span>
+
+                        <h2>
+                            Fale com a WM Personalize
+                        </h2>
+
+                        <p>
+                            Não encontrou o que procurava?
+                            Entre em contato com nossa equipe.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="https://wa.me/556298812925?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20WM%20Personalize."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="botao botao-whatsapp">
+
+                        <span class="icone-marca" data-icone="whatsapp"></span>
+                        Falar pelo WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         RODAPÉ
+    ====================================================== -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-conteudo">
+
+                <!-- COLUNA 1 -->
+                <div class="footer-coluna footer-marca">
+
+                    <a
+                        href="index.html"
+                        class="footer-logo">
+
+                        <img
+                            src="img/logo/logo.png"
+                            alt="WM Personalize">
+
+                    </a>
+
+                    <p>
+                        Tudo o que você precisa,
+                        em um só lugar.
+                    </p>
+
+                </div>
+
+
+                <!-- COLUNA 2 -->
+                <div class="footer-coluna">
+
+                    <h3>
+                        Navegação
+                    </h3>
+
+                    <a href="index.html">
+                        Início
+                    </a>
+
+                    <a href="catalogo.html">
+                        Catálogo
+                    </a>
+
+                    <a href="grafica.html">
+                        Gráfica
+                    </a>
+
+                    <a href="sobre.html">
+                        Sobre a loja
+                    </a>
+
+                    <a href="contato.html">
+                        Contato
+                    </a>
+
+                </div>
+
+
+                <!-- COLUNA 3 -->
+                <div class="footer-coluna">
+
+                    <h3>
+                        Categorias
+                    </h3>
+
+                    <a href="catalogo.html?categoria=papelaria">
+                        Papelaria
+                    </a>
+
+                    <a href="catalogo.html?categoria=festa">
+                        Artigos de festa
+                    </a>
+
+                    <a href="catalogo.html?categoria=doces">
+                        Doces
+                    </a>
+
+                    <a href="catalogo.html?categoria=brinquedos">
+                        Brinquedos
+                    </a>
+
+                    <a href="catalogo.html?categoria=utilidades">
+                        Utilidades
+                    </a>
+
+                </div>
+
+
+                <!-- COLUNA 4 -->
+                <div class="footer-coluna">
+
+                    <h3>
+                        Atendimento
+                    </h3>
+
+                    <p>
+                        Rua Urias José Dourado
+                        <br>
+                        Centro · Guarani de Goiás - GO
+                        <br>
+                        73910-000
+                    </p>
+
+                    <a
+                        href="tel:+556298812925">
+
+                        (62) 98881-2925
+
+                    </a>
+
+                    <a
+                        href="https://wa.me/556298812925"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="link-com-icone">
+
+                        <span class="icone-marca icone-cor-whatsapp" data-icone="whatsapp"></span>
+                        WhatsApp
+
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/wmpersonalize/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="link-com-icone">
+
+                        <span class="icone-marca icone-cor-instagram" data-icone="instagram"></span>
+                        Instagram
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- LINHA FINAL -->
+            <div class="footer-final">
+
+                <p>
+                    © 2026 WM Personalize. Todos os direitos reservados.
+                </p>
+
+                <p>
+                    Guarani de Goiás - GO
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         BOTÃO FLUTUANTE WHATSAPP
+    ====================================================== -->
+    <a
+        href="https://wa.me/556298812925?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20WM%20Personalize."
+        class="whatsapp-flutuante"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Falar com a WM Personalize pelo WhatsApp">
+
+        <span class="icone-marca" data-icone="whatsapp"></span>
+
+    </a>
+
+
+    <!-- JAVASCRIPT GLOBAL -->
+    <script src="js/icones.js"></script>
+
+    <script src="js/script.js"></script>
+
+    <!-- LISTA DE PRODUTOS + VITRINE DE DESTAQUES -->
+    <script src="js/produtos.js"></script>
+
+    <script src="js/home-destaques.js"></script>
+
+</body>
+
+</html>
