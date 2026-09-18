@@ -328,7 +328,7 @@ const produtos = [
         popularidade: 62,
 
         dataCadastro: "2026-09-01"
-    }
+    },
 
 
 
