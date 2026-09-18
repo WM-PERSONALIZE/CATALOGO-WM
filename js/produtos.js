@@ -331,7 +331,36 @@ const produtos = [
     }
 
 
-    
+
+
+
+   /* =====================================================
+       PRODUTO 012
+    ====================================================== */
+
+    {
+        id: 12,
+
+        nome: "Item de Papelaria",
+
+        imagem: "img/produtos/produto-002.png",
+
+        categorias: [
+            "papelaria",
+            "utilidades"
+        ],
+
+        preco: null,
+
+        descricao:
+            "Item de papelaria que também pode ser utilizado no dia a dia.",
+
+        destaque: false,
+
+        popularidade: 62,
+
+        dataCadastro: "2026-09-01"
+    }
 
 
 
