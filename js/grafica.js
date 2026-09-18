@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             id: 1,
             nome: "Impressão",
-            imagem: "img/grafica/impressao.png",
+            imagem: "img/grafica/impressora.png",
             descricao: "Impressões de documentos, trabalhos, atividades e outros materiais.",
             icone: "🖨️"
         },
