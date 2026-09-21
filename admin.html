@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Área de administração de produtos da WM Personalize.">
+    <title>Administrar produtos | WM Personalize</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <header class="admin-cabecalho">
+        <div class="container admin-cabecalho-conteudo">
+            <a href="index.html" class="logo" aria-label="WM Personalize - Início">
+                <img src="img/logo/logo.png" alt="WM Personalize">
+            </a>
+            <a href="catalogo.html" class="admin-voltar">Ver catálogo</a>
+        </div>
+    </header>
+
+    <main class="admin-principal">
+        <div class="container">
+            <section class="admin-introducao">
+                <span>PAINEL DA LOJA</span>
+                <h1>Administrar produtos</h1>
+                <p>Cadastre, edite, exclua produtos e escolha os que aparecerão em destaque.</p>
+            </section>
+
+            <section class="admin-aviso" aria-label="Como publicar alterações">
+                <strong>Publicação no GitHub:</strong> informe o token temporariamente e clique em salvar. A alteração será enviada ao repositório e aparecerá no site quando o GitHub Pages terminar de publicar.
+            </section>
+
+            <div class="admin-layout">
+                <section class="admin-painel" aria-labelledby="titulo-formulario">
+                    <div class="admin-painel-titulo">
+                        <div>
+                            <p class="admin-sobrancelha">CADASTRO</p>
+                            <h2 id="titulo-formulario">Novo produto</h2>
+                        </div>
+                        <button type="button" class="admin-link" id="cancelarEdicao" hidden>Cancelar edição</button>
+                    </div>
+
+                    <form id="formProduto" novalidate>
+                        <input type="hidden" id="produtoId">
+                        <div class="admin-campo admin-campo-completo">
+                            <label for="tokenGithub">Token do GitHub <b>*</b></label>
+                            <input id="tokenGithub" type="password" autocomplete="off" placeholder="Cole o token criado no GitHub">
+                            <small>O token não é salvo no computador. Ele é usado somente para enviar esta alteração.</small>
+                        </div>
+                        <div class="admin-campo admin-campo-completo">
+                            <label for="nomeProduto">Nome do produto <b>*</b></label>
+                            <input id="nomeProduto" type="text" maxlength="100" required placeholder="Ex.: Caneca personalizada">
+                        </div>
+
+                        <div class="admin-campo admin-campo-completo">
+                            <label for="descricaoProduto">Descrição <b>*</b></label>
+                            <textarea id="descricaoProduto" rows="4" maxlength="500" required placeholder="Descreva o produto, suas opções e características."></textarea>
+                        </div>
+
+                        <div class="admin-linha">
+                            <div class="admin-campo">
+                                <label for="precoProduto">Preço</label>
+                                <input id="precoProduto" type="text" inputmode="decimal" placeholder="Ex.: 29,90">
+                                <small>Deixe vazio para “Consulte o preço”.</small>
+                            </div>
+                            <div class="admin-campo">
+                                <label for="popularidadeProduto">Ordem de relevância</label>
+                                <input id="popularidadeProduto" type="number" min="0" max="999" value="0">
+                                <small>Quanto maior, mais acima no catálogo.</small>
+                            </div>
+                        </div>
+
+                        <fieldset class="admin-campo admin-campo-completo">
+                            <legend>Categorias <b>*</b></legend>
+                            <div class="admin-categorias" id="categoriasProduto">
+                                <label><input type="checkbox" value="papelaria"> Papelaria</label>
+                                <label><input type="checkbox" value="festa"> Artigos de festa</label>
+                                <label><input type="checkbox" value="doces"> Doces</label>
+                                <label><input type="checkbox" value="brinquedos"> Brinquedos</label>
+                                <label><input type="checkbox" value="utilidades"> Utilidades</label>
+                            </div>
+                        </fieldset>
+
+                        <label class="admin-destaque">
+                            <input id="destaqueProduto" type="checkbox">
+                            <span><strong>Produto em destaque</strong><small>Será exibido na vitrine da página inicial.</small></span>
+                        </label>
+
+                        <div class="admin-campo admin-campo-completo">
+                            <span class="admin-label">Imagem do produto <b>*</b></span>
+                            <button type="button" class="admin-upload" id="areaUpload" aria-describedby="ajudaImagem">
+                                <img id="previewImagem" alt="Prévia da imagem do produto" hidden>
+                                <span id="iconeUpload" class="admin-upload-icone">↑</span>
+                                <span id="textoUpload"><strong>Arraste uma imagem aqui</strong><small>ou clique para procurar no computador</small></span>
+                            </button>
+                            <input id="imagemProduto" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+                            <small id="ajudaImagem">PNG, JPG ou WEBP. Recomendado: até 2 MB.</small>
+                        </div>
+
+                        <p id="mensagemFormulario" class="admin-mensagem" role="status" aria-live="polite"></p>
+                        <button type="submit" class="admin-botao-principal" id="salvarProduto">Cadastrar produto</button>
+                    </form>
+                </section>
+
+                <section class="admin-painel admin-listagem" aria-labelledby="titulo-lista">
+                    <div class="admin-painel-titulo">
+                        <div>
+                            <p class="admin-sobrancelha">CATÁLOGO ATUAL</p>
+                            <h2 id="titulo-lista">Produtos <span id="quantidadeProdutos">0</span></h2>
+                        </div>
+                    </div>
+                    <div id="listaProdutosAdmin" class="admin-lista-produtos"></div>
+                    <p class="admin-ajuda-lista">As alterações são publicadas no repositório <strong>WM-PERSONALIZE/CATALOGO-WM</strong>.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/produtos.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
