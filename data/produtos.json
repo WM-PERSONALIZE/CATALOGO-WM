@@ -159,18 +159,5 @@
     "destaque": false,
     "popularidade": 62,
     "dataCadastro": "2026-09-01"
-  },
-  {
-    "id": 13,
-    "nome": "caneca",
-    "descricao": "caneca",
-    "preco": null,
-    "categorias": [
-      "papelaria"
-    ],
-    "destaque": true,
-    "imagem": "img/produtos/produto-1789992658139.png",
-    "popularidade": 0,
-    "dataCadastro": "2026-09-21"
   }
 ]
