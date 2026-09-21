@@ -56,8 +56,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     async function requisicaoGitHub(caminho, token, opcoes) {
-        const resposta = await fetch("https://api.github.com/repos/" + REPOSITORIO + "/contents/" + caminho + (opcoes && opcoes.metodo === "GET" ? "?ref=" + BRANCH : ""), {
+        const consulta = opcoes && opcoes.metodo === "GET"
+            ? "?ref=" + BRANCH + "&atualizado=" + Date.now()
+            : "";
+        const resposta = await fetch("https://api.github.com/repos/" + REPOSITORIO + "/contents/" + caminho + consulta, {
             method: opcoes && opcoes.metodo ? opcoes.metodo : "GET",
+            cache: "no-store",
             headers: {
                 "Accept": "application/vnd.github+json",
                 "Authorization": "Bearer " + token,
