@@ -17,7 +17,7 @@
 */
 
 
-const produtos = [
+const produtosIniciais = [
 
     /* =====================================================
        PRODUTO 001
@@ -367,6 +367,77 @@ const produtos = [
 
     
 ];
+
+
+/* =========================================================
+   DADOS PUBLICADOS DO CATÁLOGO
+========================================================= */
+
+/*
+   A lista publicada fica em data/produtos.json. A página admin.html
+   atualiza esse arquivo por meio da API do GitHub; depois que o GitHub
+   Pages publica o commit, todos os visitantes veem a nova lista.
+*/
+const ARQUIVO_PRODUTOS = "data/produtos.json";
+
+function copiarProdutos(lista) {
+    return JSON.parse(JSON.stringify(lista));
+}
+
+function normalizarProduto(produto, indice) {
+    const preco = Number(produto.preco);
+
+    return {
+        id: Number(produto.id) || Date.now() + indice,
+        nome: String(produto.nome || "Produto sem nome").trim(),
+        imagem: String(produto.imagem || ""),
+        categorias: Array.isArray(produto.categorias) ? produto.categorias : [],
+        preco: produto.preco === null || produto.preco === "" || !Number.isFinite(preco)
+            ? null
+            : preco,
+        descricao: String(produto.descricao || "").trim(),
+        destaque: produto.destaque === true,
+        popularidade: Number(produto.popularidade) || 0,
+        dataCadastro: produto.dataCadastro || new Date().toISOString().slice(0, 10)
+    };
+}
+
+function garantirIdsUnicos(lista) {
+    const usados = new Set();
+    let proximo = lista.reduce((maior, produto) => Math.max(maior, Number(produto.id) || 0), 0) + 1;
+
+    return lista.map(function (produto) {
+        if (usados.has(produto.id)) {
+            produto.id = proximo++;
+        }
+
+        usados.add(produto.id);
+        return produto;
+    });
+}
+
+function carregarProdutos() {
+    try {
+        const requisicao = new XMLHttpRequest();
+        requisicao.open("GET", ARQUIVO_PRODUTOS, false);
+        requisicao.send(null);
+
+        if (requisicao.status >= 200 && requisicao.status < 300) {
+            const lista = JSON.parse(requisicao.responseText);
+
+            if (Array.isArray(lista)) {
+                return garantirIdsUnicos(lista.map(normalizarProduto));
+            }
+        }
+    } catch (erro) {
+        console.warn("Não foi possível ler a lista publicada de produtos.", erro);
+    }
+
+    return garantirIdsUnicos(copiarProdutos(produtosIniciais).map(normalizarProduto));
+}
+
+/* A variável é mantida para compatibilidade com o catálogo existente. */
+const produtos = carregarProdutos();
 
 
 /* =========================================================
