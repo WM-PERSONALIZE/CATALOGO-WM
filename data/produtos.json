@@ -1,18 +1,5 @@
 [
   {
-    "id": 1,
-    "nome": "Produto de Papelaria",
-    "imagem": "img/produtos/produto-001.png",
-    "categorias": [
-      "papelaria"
-    ],
-    "preco": null,
-    "descricao": "Produto de papelaria disponível na WM Personalize. Entre em contato para consultar detalhes, valor e disponibilidade.",
-    "destaque": true,
-    "popularidade": 90,
-    "dataCadastro": "2026-09-01"
-  },
-  {
     "id": 2,
     "nome": "Produto para Utilidades",
     "imagem": "img/produtos/produto-002.png",
