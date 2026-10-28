@@ -163,8 +163,7 @@
   {
     "id": 13,
     "nome": "caneca",
-    "descricao": "tyuikol",
-    "preco": 30,
+    "imagem": "img/produtos/produto-1793192438884.jpg",
     "categorias": [
       "papelaria",
       "festa",
@@ -172,9 +171,24 @@
       "brinquedos",
       "utilidades"
     ],
+    "preco": 30,
+    "descricao": "tyuikol",
     "destaque": true,
-    "imagem": "img/produtos/produto-1793192438884.jpg",
     "popularidade": 70,
+    "dataCadastro": "2026-10-28"
+  },
+  {
+    "id": 14,
+    "nome": "caneca",
+    "descricao": "dfghjk",
+    "preco": 30,
+    "categorias": [
+      "papelaria",
+      "utilidades"
+    ],
+    "destaque": true,
+    "imagem": "img/produtos/produto-1793192603929.jpg",
+    "popularidade": 100,
     "dataCadastro": "2026-10-28"
   }
 ]
