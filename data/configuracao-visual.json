@@ -1,7 +1,7 @@
 {
   "logo": "img/logo/logo.png",
   "favicon": "img/favicon/favicon.ico",
-  "corRodape": "#1f1f1f",
+  "corRodape": "#2865c8",
   "fundoCatalogo": "img/home/fundo-catalogo.png",
   "fachada": "img/loja/fachada.png",
   "interiorLoja": "img/loja/interior-01.png",
@@ -11,8 +11,28 @@
   "banners": [
     "img/home/banner-01.png",
     "img/home/banner-02.png",
-    "img/home/banner-03.png",
-    "img/home/banner-04.png"
+    "img/personalizacao/visual-1793193613810-z4ptn.png"
   ],
-  "historico": []
+  "historico": [
+    {
+      "data": "2026-10-28T13:20:13.810Z",
+      "configuracao": {
+        "logo": "img/logo/logo.png",
+        "favicon": "img/favicon/favicon.ico",
+        "corRodape": "#1f1f1f",
+        "fundoCatalogo": "img/home/fundo-catalogo.png",
+        "fachada": "img/loja/fachada.png",
+        "interiorLoja": "img/loja/interior-01.png",
+        "imagemLoja": "img/loja/image.png",
+        "heroGrafica": "img/grafica/impressora.png",
+        "destaqueGraficaHome": "img/grafica/impressao.png",
+        "banners": [
+          "img/home/banner-01.png",
+          "img/home/banner-02.png",
+          "img/home/banner-03.png",
+          "img/home/banner-04.png"
+        ]
+      }
+    }
+  ]
 }
