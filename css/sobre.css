@@ -1,0 +1,654 @@
+css
+/* =========================================================
+   PÁGINA SOBRE A LOJA
+   WM PERSONALIZE
+   ========================================================= */
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.sobre-hero {
+    padding: 70px 0;
+    background: var(--cor-branco);
+}
+
+.sobre-hero-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre-hero-texto {
+    max-width: 620px;
+}
+
+.sobre-hero-texto h1 {
+    margin: 0 0 22px;
+
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.08;
+    font-weight: 800;
+
+    color: var(--cor-texto);
+}
+
+.sobre-hero-texto h1 span {
+    color: var(--cor-primaria);
+}
+
+.sobre-hero-texto p {
+    margin: 0 0 16px;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: var(--cor-texto-secundario);
+}
+
+.sobre-hero-texto .botao {
+    margin-top: 10px;
+}
+
+.sobre-hero-imagem {
+    width: 100%;
+    height: 440px;
+
+    overflow: hidden;
+    border-radius: var(--raio-grande);
+
+    background: var(--cor-fundo);
+    box-shadow: var(--sombra-media);
+}
+
+.sobre-hero-imagem img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform var(--transicao);
+}
+
+.sobre-hero-imagem:hover img {
+    transform: scale(1.03);
+}
+
+
+/* =========================================================
+   HISTÓRIA / QUEM SOMOS
+   ========================================================= */
+
+.sobre-historia {
+    padding: 80px 0;
+    background: var(--cor-fundo);
+}
+
+.sobre-historia-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.sobre-historia-imagem {
+    width: 100%;
+    height: 420px;
+
+    overflow: hidden;
+    border-radius: var(--raio-grande);
+
+    box-shadow: var(--sombra-media);
+}
+
+.sobre-historia-imagem img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform var(--transicao);
+}
+
+.sobre-historia-imagem:hover img {
+    transform: scale(1.03);
+}
+
+.sobre-historia-texto {
+    max-width: 600px;
+}
+
+.sobre-historia-texto h2 {
+    margin: 0 0 22px;
+
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.15;
+
+    color: var(--cor-texto);
+}
+
+.sobre-historia-texto p {
+    margin: 0 0 17px;
+
+    font-size: 16px;
+    line-height: 1.75;
+
+    color: var(--cor-texto-secundario);
+}
+
+
+/* =========================================================
+   CATEGORIAS
+   ========================================================= */
+
+.sobre-categorias {
+    padding: 80px 0;
+    background: var(--cor-branco);
+}
+
+.sobre-categorias .titulo-secao {
+    margin-bottom: 45px;
+}
+
+.sobre-categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.sobre-categoria-card {
+    display: block;
+
+    padding: 28px;
+
+    background: var(--cor-branco);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-medio);
+
+    text-decoration: none;
+
+    box-shadow: var(--sombra-pequena);
+
+    transition:
+        transform var(--transicao),
+        box-shadow var(--transicao),
+        border-color var(--transicao);
+}
+
+.sobre-categoria-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(215, 25, 32, 0.25);
+    box-shadow: var(--sombra-media);
+}
+
+.sobre-categoria-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 18px;
+
+    border-radius: 50%;
+
+    background: var(--cor-primaria-clara);
+
+    font-size: 27px;
+}
+
+.sobre-categoria-card h3 {
+    margin: 0 0 9px;
+
+    font-size: 20px;
+    color: var(--cor-texto);
+}
+
+.sobre-categoria-card p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    color: var(--cor-texto-secundario);
+}
+
+
+/* =========================================================
+   NOSSA LOJA
+   ========================================================= */
+
+.sobre-loja {
+    padding: 80px 0;
+    background: var(--cor-fundo);
+}
+
+.sobre-loja .titulo-secao {
+    margin-bottom: 45px;
+}
+
+.sobre-loja-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: stretch;
+    gap: 45px;
+}
+
+.sobre-loja-imagem {
+    min-height: 480px;
+
+    overflow: hidden;
+    border-radius: var(--raio-grande);
+
+    box-shadow: var(--sombra-media);
+}
+
+.sobre-loja-imagem img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform var(--transicao);
+}
+
+.sobre-loja-imagem:hover img {
+    transform: scale(1.03);
+}
+
+.sobre-loja-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 30px;
+}
+
+.info-loja-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+
+    padding: 22px;
+
+    background: var(--cor-branco);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-medio);
+
+    box-shadow: var(--sombra-pequena);
+}
+
+.info-loja-icone {
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--cor-primaria-clara);
+
+    font-size: 22px;
+}
+
+.info-loja-item h3 {
+    margin: 0 0 8px;
+
+    font-size: 18px;
+    color: var(--cor-texto);
+}
+
+.info-loja-item p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: var(--cor-texto-secundario);
+}
+
+.info-loja-item .botao {
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   INSTAGRAM
+   ========================================================= */
+
+.sobre-instagram {
+    padding: 55px 0;
+
+    background: var(--cor-branco);
+}
+
+.sobre-instagram-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+
+    padding: 35px 40px;
+
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-grande);
+
+    box-shadow: var(--sombra-pequena);
+}
+
+.sobre-instagram-conteudo h2 {
+    margin: 0 0 10px;
+
+    font-size: 30px;
+    color: var(--cor-texto);
+}
+
+.sobre-instagram-conteudo p {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    color: var(--cor-texto-secundario);
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.sobre-cta {
+    padding: 75px 0;
+
+    background: var(--cor-primaria);
+}
+
+.sobre-cta-conteudo {
+    text-align: center;
+}
+
+.sobre-cta-conteudo h2 {
+    margin: 0 0 13px;
+
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.2;
+
+    color: var(--cor-branco);
+}
+
+.sobre-cta-conteudo p {
+    max-width: 620px;
+
+    margin: 0 auto 28px;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: var(--cor-branco);
+}
+
+.sobre-cta-botoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.sobre-cta-botoes .botao-primario {
+    background: var(--cor-branco);
+    color: var(--cor-primaria);
+}
+
+.sobre-cta-botoes .botao-primario:hover {
+    background: var(--cor-primaria-clara);
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — ATÉ 1100PX
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .sobre-hero-conteudo {
+        gap: 40px;
+    }
+
+    .sobre-historia-conteudo {
+        gap: 40px;
+    }
+
+    .sobre-categorias-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sobre-loja-grid {
+        gap: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — ATÉ 800PX
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .sobre-hero {
+        padding: 50px 0;
+    }
+
+    .sobre-hero-conteudo {
+        grid-template-columns: 1fr;
+        gap: 35px;
+
+        text-align: center;
+    }
+
+    .sobre-hero-texto {
+        max-width: none;
+    }
+
+    .sobre-hero-imagem {
+        height: 350px;
+    }
+
+
+    .sobre-historia {
+        padding: 60px 0;
+    }
+
+    .sobre-historia-conteudo {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .sobre-historia-texto {
+        max-width: none;
+    }
+
+    .sobre-historia-texto h2 {
+        font-size: 34px;
+    }
+
+
+    .sobre-categorias {
+        padding: 60px 0;
+    }
+
+
+    .sobre-loja {
+        padding: 60px 0;
+    }
+
+    .sobre-loja-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-loja-imagem {
+        min-height: 350px;
+    }
+
+
+    .sobre-instagram-conteudo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — ATÉ 550PX
+   ========================================================= */
+
+@media (max-width: 550px) {
+
+    .sobre-hero {
+        padding: 40px 0;
+    }
+
+    .sobre-hero-conteudo,
+    .sobre-historia-conteudo,
+    .sobre-loja-grid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .sobre-hero-texto h1 {
+        font-size: 34px;
+    }
+
+    .sobre-hero-texto p {
+        font-size: 15px;
+    }
+
+    .sobre-hero-texto .botao {
+        width: 100%;
+    }
+
+    .sobre-hero-imagem {
+        height: 280px;
+        border-radius: var(--raio-medio);
+    }
+
+
+    .sobre-historia-texto h2 {
+        font-size: 30px;
+    }
+
+    .sobre-historia-texto p {
+        font-size: 15px;
+    }
+
+    .sobre-historia-imagem {
+        height: 280px;
+        border-radius: var(--raio-medio);
+    }
+
+
+    .sobre-categorias-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .sobre-categoria-card {
+        padding: 22px;
+    }
+
+
+    .sobre-loja-imagem {
+        min-height: 280px;
+        border-radius: var(--raio-medio);
+    }
+
+    .sobre-loja-info {
+        gap: 18px;
+    }
+
+    .info-loja-item {
+        padding: 18px;
+    }
+
+
+    .sobre-instagram {
+        padding: 40px 0;
+    }
+
+    .sobre-instagram-conteudo {
+        padding: 28px 22px;
+    }
+
+    .sobre-instagram-conteudo h2 {
+        font-size: 26px;
+    }
+
+    .sobre-instagram-conteudo .botao {
+        width: 100%;
+    }
+
+
+    .sobre-cta {
+        padding: 55px 0;
+    }
+
+    .sobre-cta-botoes {
+        flex-direction: column;
+    }
+
+    .sobre-cta-botoes .botao {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE — TELAS MUITO PEQUENAS
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .sobre-hero-texto h1 {
+        font-size: 30px;
+    }
+
+    .sobre-hero-imagem {
+        height: 240px;
+    }
+
+    .sobre-historia-imagem {
+        height: 240px;
+    }
+
+    .sobre-categoria-card {
+        padding: 20px;
+    }
+
+    .info-loja-item {
+        gap: 12px;
+    }
+
+    .info-loja-icone {
+        width: 42px;
+        height: 42px;
+        font-size: 19px;
+    }
+
+}
