@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Área de administração de produtos da WM Personalize.">
+    <title>Administrar produtos | WM Personalize</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <header class="admin-cabecalho">
+        <div class="container admin-cabecalho-conteudo">
+            <a href="index.html" class="logo" aria-label="WM Personalize - Início">
+                <img src="img/logo/logo.png" data-logo-visual alt="WM Personalize">
+            </a>
+            <a href="catalogo.html" class="admin-voltar">Ver catálogo</a>
+        </div>
+    </header>
+
+    <main class="admin-principal">
+        <div class="container">
+            <section class="admin-introducao">
+                <span>PAINEL DA LOJA</span>
+                <h1>Painel administrativo</h1>
+                <p>Gerencie produtos, serviços e a aparência visual do site.</p>
+            </section>
+
+            <section class="admin-aviso" aria-label="Como publicar alterações">
+                <strong>Publicação no GitHub:</strong> informe o token temporariamente e clique em salvar. A alteração será enviada ao repositório e aparecerá no site quando o GitHub Pages terminar de publicar.
+            </section>
+
+            <nav class="admin-abas" aria-label="Seções do painel">
+                <button type="button" class="admin-aba ativa" data-aba="produtos">Produtos</button>
+                <button type="button" class="admin-aba" data-aba="servicos">Serviços gráficos</button>
+                <button type="button" class="admin-aba" data-aba="aparencia">Aparência do site</button>
+            </nav>
+
+            <div class="admin-layout admin-aba-conteudo ativa" data-painel="produtos">
+                <section class="admin-painel" aria-labelledby="titulo-formulario">
+                    <div class="admin-painel-titulo">
+                        <div>
+                            <p class="admin-sobrancelha">CADASTRO</p>
+                            <h2 id="titulo-formulario">Novo produto</h2>
+                        </div>
+                        <button type="button" class="admin-link" id="cancelarEdicao" hidden>Cancelar edição</button>
+                    </div>
+
+                    <form id="formProduto" novalidate>
+                        <input type="hidden" id="produtoId">
+                        <div class="admin-campo admin-campo-completo">
+                            <label for="tokenGithub">Token do GitHub <b>*</b></label>
+                            <input id="tokenGithub" type="password" autocomplete="off" placeholder="Cole o token criado no GitHub">
+                            <small>O token não é salvo no computador. Ele é usado somente para enviar esta alteração.</small>
+                        </div>
+                        <div class="admin-campo admin-campo-completo">
+                            <label for="nomeProduto">Nome do produto <b>*</b></label>
+                            <input id="nomeProduto" type="text" maxlength="100" required placeholder="Ex.: Caneca personalizada">
+                        </div>
+
+                        <div class="admin-campo admin-campo-completo">
+                            <label for="descricaoProduto">Descrição <b>*</b></label>
+                            <textarea id="descricaoProduto" rows="4" maxlength="500" required placeholder="Descreva o produto, suas opções e características."></textarea>
+                        </div>
+
+                        <div class="admin-linha">
+                            <div class="admin-campo">
+                                <label for="precoProduto">Preço</label>
+                                <input id="precoProduto" type="text" inputmode="decimal" placeholder="Ex.: 29,90">
+                                <small>Deixe vazio para “Consulte o preço”.</small>
+                            </div>
+                            <div class="admin-campo">
+                                <label for="popularidadeProduto">Ordem de relevância</label>
+                                <input id="popularidadeProduto" type="number" min="0" max="999" value="0">
+                                <small>Quanto maior, mais acima no catálogo.</small>
+                            </div>
+                        </div>
+
+                        <fieldset class="admin-campo admin-campo-completo">
+                            <legend>Categorias <b>*</b></legend>
+                            <div class="admin-categorias" id="categoriasProduto">
+                                <label><input type="checkbox" value="papelaria"> Papelaria</label>
+                                <label><input type="checkbox" value="festa"> Artigos de festa</label>
+                                <label><input type="checkbox" value="doces"> Doces</label>
+                                <label><input type="checkbox" value="brinquedos"> Brinquedos</label>
+                                <label><input type="checkbox" value="utilidades"> Utilidades</label>
+                            </div>
+                        </fieldset>
+
+                        <label class="admin-destaque">
+                            <input id="destaqueProduto" type="checkbox">
+                            <span><strong>Produto em destaque</strong><small>Será exibido na vitrine da página inicial.</small></span>
+                        </label>
+
+                        <div class="admin-campo admin-campo-completo">
+                            <span class="admin-label">Imagem do produto <b>*</b></span>
+                            <button type="button" class="admin-upload" id="areaUpload" aria-describedby="ajudaImagem">
+                                <img id="previewImagem" alt="Prévia da imagem do produto" hidden>
+                                <span id="iconeUpload" class="admin-upload-icone">↑</span>
+                                <span id="textoUpload"><strong>Arraste uma imagem aqui</strong><small>ou clique para procurar no computador</small></span>
+                            </button>
+                            <input id="imagemProduto" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+                            <small id="ajudaImagem">PNG, JPG ou WEBP. Recomendado: até 2 MB.</small>
+                        </div>
+
+                        <p id="mensagemFormulario" class="admin-mensagem" role="status" aria-live="polite"></p>
+                        <button type="submit" class="admin-botao-principal" id="salvarProduto">Cadastrar produto</button>
+                    </form>
+                </section>
+
+                <section class="admin-painel admin-listagem" aria-labelledby="titulo-lista">
+                    <div class="admin-painel-titulo">
+                        <div>
+                            <p class="admin-sobrancelha">CATÁLOGO ATUAL</p>
+                            <h2 id="titulo-lista">Produtos <span id="quantidadeProdutos">0</span></h2>
+                        </div>
+                    </div>
+                    <div id="listaProdutosAdmin" class="admin-lista-produtos"></div>
+                    <p class="admin-ajuda-lista">As alterações são publicadas no repositório <strong>WM-PERSONALIZE/CATALOGO-WM</strong>.</p>
+                </section>
+            </div>
+
+            <div class="admin-layout admin-servicos-layout admin-aba-conteudo" data-painel="servicos">
+                <section class="admin-painel" aria-labelledby="titulo-formulario-servico">
+                    <div class="admin-painel-titulo">
+                        <div>
+                            <p class="admin-sobrancelha">SERVIÇOS GRÁFICOS</p>
+                            <h2 id="titulo-formulario-servico">Novo serviço</h2>
+                        </div>
+                        <button type="button" class="admin-link" id="cancelarEdicaoServico" hidden>Cancelar edição</button>
+                    </div>
+                    <form id="formServicoGrafica" novalidate>
+                        <input type="hidden" id="servicoId">
+                        <div class="admin-campo admin-campo-completo">
+                            <label for="tokenServicoGithub">Token do GitHub <b>*</b></label>
+                            <input id="tokenServicoGithub" type="password" autocomplete="off" placeholder="Cole o token criado no GitHub">
+                        </div>
+                        <div class="admin-campo admin-campo-completo">
+                            <label for="nomeServico">Nome do serviço <b>*</b></label>
+                            <input id="nomeServico" type="text" maxlength="100" required placeholder="Ex.: Impressão colorida">
+                        </div>
+                        <div class="admin-campo admin-campo-completo">
+                            <label for="descricaoServico">Descrição <b>*</b></label>
+                            <textarea id="descricaoServico" rows="4" maxlength="500" required placeholder="Explique o que este serviço oferece."></textarea>
+                        </div>
+                        <div class="admin-campo admin-campo-completo">
+                            <label for="iconeServico">Ícone</label>
+                            <input id="iconeServico" type="text" maxlength="8" value="🖨️" placeholder="Ex.: 🖨️">
+                            <small>Opcional. Pode colar um emoji.</small>
+                        </div>
+                        <div class="admin-campo admin-campo-completo">
+                            <span class="admin-label">Imagem do serviço <b>*</b></span>
+                            <button type="button" class="admin-upload" id="areaUploadServico">
+                                <img id="previewImagemServico" alt="Prévia da imagem do serviço" hidden>
+                                <span id="iconeUploadServico" class="admin-upload-icone">↑</span>
+                                <span id="textoUploadServico"><strong>Arraste uma imagem aqui</strong><small>ou clique para procurar no computador</small></span>
+                            </button>
+                            <input id="imagemServico" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+                            <small>PNG, JPG ou WEBP. Recomendado: até 2 MB.</small>
+                        </div>
+                        <p id="mensagemServico" class="admin-mensagem" role="status" aria-live="polite"></p>
+                        <button type="submit" class="admin-botao-principal" id="salvarServico">Cadastrar serviço</button>
+                    </form>
+                </section>
+
+                <section class="admin-painel admin-listagem" aria-labelledby="titulo-lista-servicos">
+                    <div class="admin-painel-titulo">
+                        <div>
+                            <p class="admin-sobrancelha">LISTA DE SERVIÇOS</p>
+                            <h2 id="titulo-lista-servicos">Serviços <span id="quantidadeServicos">0</span></h2>
+                        </div>
+                    </div>
+                    <div id="listaServicosAdmin" class="admin-lista-produtos"></div>
+                    <p class="admin-ajuda-lista">As alterações serão exibidas na página <strong>Gráfica</strong> após a publicação.</p>
+                </section>
+            </div>
+
+            <section class="admin-aba-conteudo admin-aparencia" data-painel="aparencia" aria-labelledby="titulo-aparencia">
+                <div class="admin-painel">
+                    <div class="admin-painel-titulo">
+                        <div>
+                            <p class="admin-sobrancelha">PERSONALIZAÇÃO</p>
+                            <h2 id="titulo-aparencia">Aparência do site</h2>
+                        </div>
+                    </div>
+                    <div class="admin-campo admin-campo-completo">
+                        <label for="tokenVisualGithub">Token do GitHub <b>*</b></label>
+                        <input id="tokenVisualGithub" type="password" autocomplete="off" placeholder="Cole o token criado no GitHub">
+                        <small>O token não é salvo. Ele é obrigatório para publicar ou restaurar qualquer alteração visual.</small>
+                    </div>
+                    <div class="admin-campo admin-campo-completo">
+                        <label for="corRodapeVisual">Cor do rodapé</label>
+                        <div class="admin-cor-linha"><input id="corRodapeVisual" type="color" value="#1f1f1f"><output id="textoCorRodape">#1f1f1f</output><div id="previewRodape" class="admin-preview-rodape">Prévia do rodapé</div></div>
+                    </div>
+                    <p class="admin-secao-titulo">Imagens globais</p>
+                    <div id="listaImagensVisuais" class="admin-grade-visuais"></div>
+                    <p class="admin-secao-titulo">Banners da página inicial</p>
+                    <div id="listaBannersVisuais" class="admin-grade-visuais"></div>
+                    <button type="button" id="adicionarBanner" class="admin-botao-secundario">+ Adicionar banner</button>
+                    <p id="mensagemVisual" class="admin-mensagem" role="status" aria-live="polite"></p>
+                    <div class="admin-acoes-visuais"><button type="button" id="salvarVisual" class="admin-botao-principal">Publicar aparência</button><button type="button" id="restaurarVisual" class="admin-botao-secundario">Restaurar versão anterior</button></div>
+                    <div id="desfazerVisual" class="admin-desfazer" hidden><span>Alteração publicada.</span><button type="button" id="botaoDesfazerVisual">Desfazer</button><button type="button" id="fecharDesfazerVisual" aria-label="Fechar aviso">×</button></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/configuracao-visual.js"></script>
+    <script src="js/produtos.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/servicos-grafica.js"></script>
+    <script src="js/admin-servicos.js"></script>
+    <script src="js/admin-abas.js"></script>
+    <script src="js/admin-visual.js"></script>
+</body>
+</html>
