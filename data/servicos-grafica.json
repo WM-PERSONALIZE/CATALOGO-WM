@@ -1,0 +1,10 @@
+[
+  {"id":1,"nome":"Impressão","imagem":"img/grafica/impressora.png","descricao":"Impressões de documentos, trabalhos, atividades e outros materiais.","icone":"🖨️"},
+  {"id":2,"nome":"Xerox","imagem":"img/grafica/xerox.png","descricao":"Cópias de documentos e materiais em diferentes quantidades.","icone":"📄"},
+  {"id":3,"nome":"Encadernação","imagem":"img/grafica/encadernacao.png","descricao":"Encadernação de trabalhos, apostilas, documentos e outros materiais.","icone":"📚"},
+  {"id":4,"nome":"Plastificação","imagem":"img/grafica/plastificacao.png","descricao":"Proteção e acabamento para documentos, cartões, avisos e outros materiais.","icone":"🪪"},
+  {"id":5,"nome":"Cartão de visita","imagem":"img/grafica/cartao-visita.png","descricao":"Produção de cartões de visita personalizados para empresas e profissionais.","icone":"💼"},
+  {"id":6,"nome":"Panfleto","imagem":"img/grafica/panfleto.png","descricao":"Panfletos personalizados para divulgação de produtos, serviços e eventos.","icone":"📢"},
+  {"id":7,"nome":"Adesivo","imagem":"img/grafica/adesivo.png","descricao":"Adesivos personalizados para divulgação, identificação e decoração.","icone":"🏷️"},
+  {"id":8,"nome":"Arte digital","imagem":"img/grafica/arte-digital.png","descricao":"Criação de artes digitais personalizadas para diferentes finalidades.","icone":"🎨"}
+]
